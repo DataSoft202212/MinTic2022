@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd26efe5-be5b-47a3-86de-82590fcf7c82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/sistemadegestion/src/main/java/com/datasoft/sistemadegestion/entity/Empresa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sistemadegestion/src/main/java/com/datasoft/sistemadegestion/entity/MovimientoDinero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sistemadegestion/src/main/java/com/datasoft/sistemadegestion/entity/Rol.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sistemadegestion/src/main/java/com/datasoft/sistemadegestion/entity/TipoDocumento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sistemadegestion/src/main/java/com/datasoft/sistemadegestion/entity/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemadegestion/src/main/java/com/datasoft/sistemadegestion/entidades/Empleado.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemadegestion/src/main/java/com/datasoft/sistemadegestion/entidades/Empresa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemadegestion/src/main/java/com/datasoft/sistemadegestion/entidades/MovimientoDinero.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemadegestion/src/main/java/com/datasoft/sistemadegestion/entidades/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemadegestion/src/main/java/com/datasoft/sistemadegestion/entidades/Empleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemadegestion/src/main/java/com/datasoft/sistemadegestion/entidades/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemadegestion/src/main/java/com/datasoft/sistemadegestion/entidades/Empresa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemadegestion/src/main/java/com/datasoft/sistemadegestion/entidades/MovimientoDinero.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemadegestion/src/main/java/com/datasoft/sistemadegestion/entidades/MovimientoDinero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +23,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -39,18 +41,21 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2DtXqOxp2T2XQooPqd341A3PdN5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="com.datasoft.sistemadegestion.entity in sistemadegestion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistemadegestion" />

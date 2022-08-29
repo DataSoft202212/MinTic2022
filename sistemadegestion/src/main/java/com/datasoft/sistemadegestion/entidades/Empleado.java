@@ -1,6 +1,10 @@
 package com.datasoft.sistemadegestion.entidades;
 
 public class Empleado {
+
+    private int idEmpleado;
+    private double numDocumento;
+    private TipoDocumento tipoDocumento;
     private String nombreEmpleado;
     private String apellidoEmpleado;
     private String dirreccionEmpleado;
@@ -9,7 +13,10 @@ public class Empleado {
     private Rol rolEmpleado;
     private Empresa empresa;
 
-    public Empleado(String nombreEmpleado, String apellidoEmpleado, String dirreccionEmpleado, String telefonoEmpleado, String emailEmpleado, Rol rolEmpleado, Empresa empresa) {
+    public Empleado(int idEmpleado, double numDocumento, TipoDocumento tipoDocumento, String nombreEmpleado, String apellidoEmpleado, String dirreccionEmpleado, String telefonoEmpleado, String emailEmpleado, Rol rolEmpleado, Empresa empresa) {
+        this.idEmpleado = idEmpleado;
+        this.numDocumento = numDocumento;
+        this.tipoDocumento = tipoDocumento;
         this.nombreEmpleado = nombreEmpleado;
         this.apellidoEmpleado = apellidoEmpleado;
         this.dirreccionEmpleado = dirreccionEmpleado;
@@ -17,6 +24,30 @@ public class Empleado {
         this.emailEmpleado = emailEmpleado;
         this.rolEmpleado = rolEmpleado;
         this.empresa = empresa;
+    }
+
+    public int getIdEmpleado() {
+        return idEmpleado;
+    }
+
+    public void setIdEmpleado(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
+    }
+
+    public double getNumDocumento() {
+        return numDocumento;
+    }
+
+    public void setNumDocumento(double numDocumento) {
+        this.numDocumento = numDocumento;
+    }
+
+    public TipoDocumento getTipoDocumento() {
+        return tipoDocumento;
+    }
+
+    public void setTipoDocumento(TipoDocumento tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
     }
 
     public String getNombreEmpleado() {

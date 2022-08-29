@@ -5,13 +5,15 @@ public class MovimientoDinero {
     private int numMovimientoDinero;
     private String fechaMovimientoDinero;
     private String conceptoMovimientoDinero;
-    private String usuarioMovimientoDinero;
+    private double valorMovimientoDinero;
+    private Empleado empleadoMovimiento;
 
-    public MovimientoDinero(int numMovimientoDinero, String fechaMovimientoDinero, String conceptoMovimientoDinero, String usuarioMovimientoDinero) {
+    public MovimientoDinero(int numMovimientoDinero, String fechaMovimientoDinero, String conceptoMovimientoDinero, double valorMovimientoDinero, Empleado empleadoMovimiento) {
         this.numMovimientoDinero = numMovimientoDinero;
         this.fechaMovimientoDinero = fechaMovimientoDinero;
         this.conceptoMovimientoDinero = conceptoMovimientoDinero;
-        this.usuarioMovimientoDinero = usuarioMovimientoDinero;
+        this.valorMovimientoDinero = valorMovimientoDinero;
+        this.empleadoMovimiento = empleadoMovimiento;
     }
 
     public int getNumMovimientoDinero() {
@@ -38,12 +40,20 @@ public class MovimientoDinero {
         this.conceptoMovimientoDinero = conceptoMovimientoDinero;
     }
 
-    public String getUsuarioMovimientoDinero() {
-        return usuarioMovimientoDinero;
+    public double getValorMovimientoDinero() {
+        return valorMovimientoDinero;
     }
 
-    public void setUsuarioMovimientoDinero(String usuarioMovimientoDinero) {
-        this.usuarioMovimientoDinero = usuarioMovimientoDinero;
+    public void setValorMovimientoDinero(double valorMovimientoDinero) {
+        this.valorMovimientoDinero = valorMovimientoDinero;
+    }
+
+    public Empleado getEmpleadoMovimiento() {
+        return empleadoMovimiento;
+    }
+
+    public void setEmpleadoMovimiento(Empleado empleadoMovimiento) {
+        this.empleadoMovimiento = empleadoMovimiento;
     }
 
     @Override
@@ -52,7 +62,8 @@ public class MovimientoDinero {
                 "numMovimientoDinero=" + numMovimientoDinero +
                 ", fechaMovimientoDinero='" + fechaMovimientoDinero + '\'' +
                 ", conceptoMovimientoDinero='" + conceptoMovimientoDinero + '\'' +
-                ", usuarioMovimientoDinero='" + usuarioMovimientoDinero + '\'' +
+                ", valorMovimientoDinero=" + valorMovimientoDinero +
+                ", empleadoMovimiento=" + empleadoMovimiento +
                 '}';
     }
 }

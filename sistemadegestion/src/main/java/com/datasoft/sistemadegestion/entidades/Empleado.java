@@ -7,25 +7,16 @@ public class Empleado {
     private String telefonoEmpleado;
     private String emailEmpleado;
     private Rol rolEmpleado;
+    private Empresa empresa;
 
-    private MovimientoDinero movimientoDinero;
-
-    public Empleado(String nombreEmpleado, String apellidoEmpleado, String dirreccionEmpleado, String telefonoEmpleado, String emailEmpleado, Rol rolEmpleado, MovimientoDinero movimientoDinero) {
+    public Empleado(String nombreEmpleado, String apellidoEmpleado, String dirreccionEmpleado, String telefonoEmpleado, String emailEmpleado, Rol rolEmpleado, Empresa empresa) {
         this.nombreEmpleado = nombreEmpleado;
         this.apellidoEmpleado = apellidoEmpleado;
         this.dirreccionEmpleado = dirreccionEmpleado;
         this.telefonoEmpleado = telefonoEmpleado;
         this.emailEmpleado = emailEmpleado;
         this.rolEmpleado = rolEmpleado;
-        this.movimientoDinero = movimientoDinero;
-    }
-
-    public MovimientoDinero getMovimientoDinero() {
-        return movimientoDinero;
-    }
-
-    public void setMovimientoDinero(MovimientoDinero movimientoDinero) {
-        this.movimientoDinero = movimientoDinero;
+        this.empresa = empresa;
     }
 
     public String getNombreEmpleado() {
@@ -76,6 +67,14 @@ public class Empleado {
         this.rolEmpleado = rolEmpleado;
     }
 
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
     @Override
     public String toString() {
         return "Empleado{" +
@@ -85,7 +84,7 @@ public class Empleado {
                 ", telefonoEmpleado='" + telefonoEmpleado + '\'' +
                 ", emailEmpleado='" + emailEmpleado + '\'' +
                 ", rolEmpleado=" + rolEmpleado +
-                ", movimientoDinero=" + movimientoDinero +
+                ", empresa=" + empresa +
                 '}';
     }
 }

@@ -85,6 +85,7 @@ public class Empleado {
                 ", telefonoEmpleado='" + telefonoEmpleado + '\'' +
                 ", emailEmpleado='" + emailEmpleado + '\'' +
                 ", rolEmpleado=" + rolEmpleado +
+                ", movimientoDinero=" + movimientoDinero +
                 '}';
     }
 }

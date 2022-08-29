@@ -1,21 +1,21 @@
 package com.datasoft.sistemadegestion.entidades;
 
 public class Rol {
-    private double idRol;
+    private int idRol;
     private String descripcionRol;
     private boolean estadoRol;
 
-    public Rol(double idRol, String descripcionRol, boolean estadoRol) {
+    public Rol(int idRol, String descripcionRol, boolean estadoRol) {
         this.idRol = idRol;
         this.descripcionRol = descripcionRol;
         this.estadoRol = estadoRol;
     }
 
-    public double getIdRol() {
+    public int getIdRol() {
         return idRol;
     }
 
-    public void setIdRol(double idRol) {
+    public void setIdRol(int idRol) {
         this.idRol = idRol;
     }
 

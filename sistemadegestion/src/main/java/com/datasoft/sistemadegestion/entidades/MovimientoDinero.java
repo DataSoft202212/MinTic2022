@@ -10,12 +10,19 @@ public class MovimientoDinero {
     private double valorMovimientoDinero;
     private Empleado empleadoMovimiento;
 
-    public MovimientoDinero(int numMovimientoDinero, LocalDate fechaMovimientoDinero, String conceptoMovimientoDinero, double valorMovimientoDinero, Empleado empleadoMovimiento) {
+    private Ingresos movimientoIngreso;
+
+    private Egresos movimientoEgreso;
+
+
+    public MovimientoDinero(int numMovimientoDinero, LocalDate fechaMovimientoDinero, String conceptoMovimientoDinero, double valorMovimientoDinero, Empleado empleadoMovimiento, Ingresos movimientoIngreso, Egresos movimientoEgreso) {
         this.numMovimientoDinero = numMovimientoDinero;
         this.fechaMovimientoDinero = fechaMovimientoDinero;
         this.conceptoMovimientoDinero = conceptoMovimientoDinero;
         this.valorMovimientoDinero = valorMovimientoDinero;
         this.empleadoMovimiento = empleadoMovimiento;
+        this.movimientoIngreso = movimientoIngreso;
+        this.movimientoEgreso = movimientoEgreso;
     }
 
     public int getNumMovimientoDinero() {
@@ -62,10 +69,12 @@ public class MovimientoDinero {
     public String toString() {
         return "MovimientoDinero{" +
                 "numMovimientoDinero=" + numMovimientoDinero +
-                ", fechaMovimientoDinero='" + fechaMovimientoDinero + '\'' +
+                ", fechaMovimientoDinero=" + fechaMovimientoDinero +
                 ", conceptoMovimientoDinero='" + conceptoMovimientoDinero + '\'' +
                 ", valorMovimientoDinero=" + valorMovimientoDinero +
                 ", empleadoMovimiento=" + empleadoMovimiento +
+                ", movimientoIngreso=" + movimientoIngreso +
+                ", movimientoEgreso=" + movimientoEgreso +
                 '}';
     }
 }

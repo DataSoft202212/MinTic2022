@@ -1,14 +1,16 @@
 package com.datasoft.sistemadegestion.entidades;
 
 
+import java.time.LocalDate;
+
 public class MovimientoDinero {
     private int numMovimientoDinero;
-    private String fechaMovimientoDinero;
+    private LocalDate fechaMovimientoDinero;
     private String conceptoMovimientoDinero;
     private double valorMovimientoDinero;
     private Empleado empleadoMovimiento;
 
-    public MovimientoDinero(int numMovimientoDinero, String fechaMovimientoDinero, String conceptoMovimientoDinero, double valorMovimientoDinero, Empleado empleadoMovimiento) {
+    public MovimientoDinero(int numMovimientoDinero, LocalDate fechaMovimientoDinero, String conceptoMovimientoDinero, double valorMovimientoDinero, Empleado empleadoMovimiento) {
         this.numMovimientoDinero = numMovimientoDinero;
         this.fechaMovimientoDinero = fechaMovimientoDinero;
         this.conceptoMovimientoDinero = conceptoMovimientoDinero;
@@ -24,11 +26,11 @@ public class MovimientoDinero {
         this.numMovimientoDinero = numMovimientoDinero;
     }
 
-    public String getFechaMovimientoDinero() {
+    public LocalDate getFechaMovimientoDinero() {
         return fechaMovimientoDinero;
     }
 
-    public void setFechaMovimientoDinero(String fechaMovimientoDinero) {
+    public void setFechaMovimientoDinero(LocalDate fechaMovimientoDinero) {
         this.fechaMovimientoDinero = fechaMovimientoDinero;
     }
 

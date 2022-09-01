@@ -1,28 +1,16 @@
 package com.datasoft.sistemadegestion.entidades;
 
 
-import java.time.LocalDate;
 
 public class MovimientoDinero {
     private int numMovimientoDinero;
-    private LocalDate fechaMovimientoDinero;
-    private String conceptoMovimientoDinero;
-    private double valorMovimientoDinero;
-    private Empleado empleadoMovimiento;
+    private TipoDeMovimiento tipoMovimientoDinero;
+    private Empleado usuarioMovimientoDinero;
 
-    private Ingresos movimientoIngreso;
-
-    private Egresos movimientoEgreso;
-
-
-    public MovimientoDinero(int numMovimientoDinero, LocalDate fechaMovimientoDinero, String conceptoMovimientoDinero, double valorMovimientoDinero, Empleado empleadoMovimiento, Ingresos movimientoIngreso, Egresos movimientoEgreso) {
+    public MovimientoDinero(int numMovimientoDinero, TipoDeMovimiento tipoMovimientoDinero, Empleado usuarioMovimientoDinero) {
         this.numMovimientoDinero = numMovimientoDinero;
-        this.fechaMovimientoDinero = fechaMovimientoDinero;
-        this.conceptoMovimientoDinero = conceptoMovimientoDinero;
-        this.valorMovimientoDinero = valorMovimientoDinero;
-        this.empleadoMovimiento = empleadoMovimiento;
-        this.movimientoIngreso = movimientoIngreso;
-        this.movimientoEgreso = movimientoEgreso;
+        this.tipoMovimientoDinero = tipoMovimientoDinero;
+        this.usuarioMovimientoDinero = usuarioMovimientoDinero;
     }
 
     public int getNumMovimientoDinero() {
@@ -33,48 +21,29 @@ public class MovimientoDinero {
         this.numMovimientoDinero = numMovimientoDinero;
     }
 
-    public LocalDate getFechaMovimientoDinero() {
-        return fechaMovimientoDinero;
+    public TipoDeMovimiento getTipoMovimientoDinero() {
+        return tipoMovimientoDinero;
     }
 
-    public void setFechaMovimientoDinero(LocalDate fechaMovimientoDinero) {
-        this.fechaMovimientoDinero = fechaMovimientoDinero;
+    public void setTipoMovimientoDinero(TipoDeMovimiento tipoMovimientoDinero) {
+        this.tipoMovimientoDinero = tipoMovimientoDinero;
     }
 
-    public String getConceptoMovimientoDinero() {
-        return conceptoMovimientoDinero;
+    public Empleado getUsuarioMovimientoDinero() {
+        return usuarioMovimientoDinero;
     }
 
-    public void setConceptoMovimientoDinero(String conceptoMovimientoDinero) {
-        this.conceptoMovimientoDinero = conceptoMovimientoDinero;
-    }
-
-    public double getValorMovimientoDinero() {
-        return valorMovimientoDinero;
-    }
-
-    public void setValorMovimientoDinero(double valorMovimientoDinero) {
-        this.valorMovimientoDinero = valorMovimientoDinero;
-    }
-
-    public Empleado getEmpleadoMovimiento() {
-        return empleadoMovimiento;
-    }
-
-    public void setEmpleadoMovimiento(Empleado empleadoMovimiento) {
-        this.empleadoMovimiento = empleadoMovimiento;
+    public void setUsuarioMovimientoDinero(Empleado usuarioMovimientoDinero) {
+        this.usuarioMovimientoDinero = usuarioMovimientoDinero;
     }
 
     @Override
     public String toString() {
         return "MovimientoDinero{" +
                 "numMovimientoDinero=" + numMovimientoDinero +
-                ", fechaMovimientoDinero=" + fechaMovimientoDinero +
-                ", conceptoMovimientoDinero='" + conceptoMovimientoDinero + '\'' +
-                ", valorMovimientoDinero=" + valorMovimientoDinero +
-                ", empleadoMovimiento=" + empleadoMovimiento +
-                ", movimientoIngreso=" + movimientoIngreso +
-                ", movimientoEgreso=" + movimientoEgreso +
+                ", tipoMovimientoDinero=" + tipoMovimientoDinero +
+                ", usuarioMovimientoDinero=" + usuarioMovimientoDinero +
                 '}';
     }
 }
+

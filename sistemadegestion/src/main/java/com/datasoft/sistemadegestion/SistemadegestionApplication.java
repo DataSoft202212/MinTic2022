@@ -3,7 +3,9 @@ package com.datasoft.sistemadegestion;
 import com.datasoft.sistemadegestion.entidades.*;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 import java.time.LocalDate;
+import java.util.Date;
 
 @SpringBootApplication
 public class SistemadegestionApplication {
@@ -30,21 +32,10 @@ public class SistemadegestionApplication {
 		empleado1.setApellidoEmpleado("Perez");
 		System.out.println(empleado1.toString());
 
-		Ingresos ingUno = new Ingresos();
-		ingUno.setIdIngreso(2122);
-		ingUno.setValorIngreso(320000);
-		System.out.println(ingUno.toString());
+		//instancia de clase Egreso
 
-		Egresos engUno = new Egresos();
-		engUno.setIdEgreso(2234);
-		engUno.setValorEgreso(12000);
-		System.out.println(engUno.toString());
-		//Instancia de la clase MovimientoDinero
-		MovimientoDinero movDinero1 = new MovimientoDinero(0001,LocalDate.now(),"pago de empleado",45000,empleado1,ingUno, engUno);
-		System.out.println(movDinero1.toString());
 
-		//update atributo de la clase MovimientoDinero
-		movDinero1.setValorMovimientoDinero(-56000);
-		System.out.println(movDinero1.toString());
+		//instancia de clase Ingreso
+
 	}
 }

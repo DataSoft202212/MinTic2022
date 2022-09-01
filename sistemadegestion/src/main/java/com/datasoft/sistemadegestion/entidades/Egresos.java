@@ -1,10 +1,20 @@
 package com.datasoft.sistemadegestion.entidades;
 
-public class Egresos {
-    private int idEgreso;
-    private double valorEgreso;
+import java.util.Date;
 
-    public Egresos() {
+public class Egresos extends MovimientoDinero{
+
+    private int idEgreso;
+    private Date fechaEgreso;
+    private double valorEgreso;
+    private String conceptoEgreso;
+
+    public Egresos(int numMovimientoDinero, TipoDeMovimiento tipoMovimientoDinero, Empleado usuarioMovimientoDinero, int idEgreso, Date fechaEgreso, double valorEgreso, String conceptoEgreso) {
+        super(numMovimientoDinero, tipoMovimientoDinero, usuarioMovimientoDinero);
+        this.idEgreso = idEgreso;
+        this.fechaEgreso = fechaEgreso;
+        this.valorEgreso = valorEgreso;
+        this.conceptoEgreso = conceptoEgreso;
     }
 
     public int getIdEgreso() {
@@ -15,6 +25,14 @@ public class Egresos {
         this.idEgreso = idEgreso;
     }
 
+    public Date getFechaEgreso() {
+        return fechaEgreso;
+    }
+
+    public void setFechaEgreso(Date fechaEgreso) {
+        this.fechaEgreso = fechaEgreso;
+    }
+
     public double getValorEgreso() {
         return valorEgreso;
     }
@@ -23,11 +41,21 @@ public class Egresos {
         this.valorEgreso = valorEgreso;
     }
 
+    public String getConceptoEgreso() {
+        return conceptoEgreso;
+    }
+
+    public void setConceptoEgreso(String conceptoEgreso) {
+        this.conceptoEgreso = conceptoEgreso;
+    }
+
     @Override
     public String toString() {
-        return "Egresos{" +
+        return "Egresos{" + super.toString() +
                 "idEgreso=" + idEgreso +
+                ", fechaEgreso=" + fechaEgreso +
                 ", valorEgreso=" + valorEgreso +
-                '}';
+                ", conceptoEgreso='" + conceptoEgreso + '\'' +
+                "} " ;
     }
 }

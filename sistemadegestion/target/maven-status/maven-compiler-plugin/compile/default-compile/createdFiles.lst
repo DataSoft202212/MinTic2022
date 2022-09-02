@@ -1,0 +1,9 @@
+com\datasoft\sistemadegestion\entidades\Ingresos.class
+com\datasoft\sistemadegestion\entidades\Egresos.class
+com\datasoft\sistemadegestion\entidades\TipoDeMovimiento.class
+com\datasoft\sistemadegestion\entidades\Empleado.class
+com\datasoft\sistemadegestion\entidades\MovimientoDinero.class
+com\datasoft\sistemadegestion\entidades\Empresa.class
+com\datasoft\sistemadegestion\entidades\TipoDocumento.class
+com\datasoft\sistemadegestion\entidades\Rol.class
+com\datasoft\sistemadegestion\SistemadegestionApplication.class

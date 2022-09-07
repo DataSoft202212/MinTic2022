@@ -28,10 +28,6 @@ public class SistemacontableApplication {
 		Usuario userUno = new Usuario(1,tipoDocumentoUno,"1075212567","camilo","vargas","bogota",601234345,"cvargasg@hotmail.com",rolUno,"1q2w3e4r5t",true);
 		System.out.println(userUno.toString());
 
-
-
 	}
-
-
 
 }

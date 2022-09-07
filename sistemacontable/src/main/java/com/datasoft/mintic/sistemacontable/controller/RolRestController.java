@@ -1,6 +1,8 @@
 package com.datasoft.mintic.sistemacontable.controller;
 
 import com.datasoft.mintic.sistemacontable.entity.Rol;
+import com.datasoft.mintic.sistemacontable.service.IRolService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -12,42 +14,34 @@ import java.util.List;
 @RequestMapping("/api")
 public class RolRestController {
 
+    @Autowired
+    private IRolService rolService;
+
     //Metodo Get -> busqueda por id, en nuestra ruta debemos agregar el id
     @GetMapping("/rol/{id}")
     public Rol findById (@PathVariable long id){
-        Rol rol1 = new Rol(id,"Administrador",true);
-        return rol1;
+        return rolService.findById(id);
     }
 
     //Metodo Get -> Busqueda de todos los objetos de mi clase
     @GetMapping("/rol")
     public List<Rol> findAll(){
-        List<Rol> roles = new ArrayList<Rol>();
-        Rol rol1 = new Rol(1,"Administrador",true);
-        roles.add(rol1);
-        Rol rol2 = new Rol(2,"Operador",true);
-        roles.add(rol2);
-        return roles;
+        return rolService.findAll();
     }
 
     //Crear un rol
     @PostMapping("/rol")
     public Rol createRol (@RequestBody Rol rol){
-        Rol nuevoRol = new Rol(rol.getIdRol(),rol.getDescripcionRol(),rol.isEstadoRol());
-        return nuevoRol;
+        return rolService.createRol(rol);
     }
 
     @PutMapping("/rol/{id}")
-    public Rol updateRol (@PathVariable long id, @RequestBody Rol rol){
-        Rol putRol = findById(id);
-        putRol.setDescripcionRol(rol.getDescripcionRol());
-        putRol.setEstadoRol(rol.isEstadoRol());
-        return putRol;
+    public Rol updateRol (@PathVariable long id, @RequestBody Rol rol) {
+        return rolService.updateRol(id, rol);
     }
-
     @DeleteMapping("/rol/{id}")
     public void deleteRol(@PathVariable long id){
-        Rol delRol = findById(id);
+        rolService.deleteRol(id);
     }
 
 }

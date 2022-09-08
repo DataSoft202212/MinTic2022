@@ -2,6 +2,8 @@ package com.datasoft.mintic.sistemacontable.controller;
 
 import com.datasoft.mintic.sistemacontable.entity.Rol;
 import com.datasoft.mintic.sistemacontable.entity.TipoDocumento;
+import com.datasoft.mintic.sistemacontable.service.ITipoDocumentoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -11,21 +13,18 @@ import java.util.List;
 @RequestMapping("/api")
 public class TipoDocumentoRestController {
 
+    @Autowired
+    private ITipoDocumentoService tipoDocumentoService;
+
     @GetMapping("/TipoDocumento/{id}")
     public TipoDocumento findById(@PathVariable long id){
-       TipoDocumento docUno = new TipoDocumento(id,"Cedula Ciudadania","CC",true);
-       return docUno;
+       return tipoDocumentoService.findById(id);
     }
 
     //Metodo Get -> Busqueda de todos los objetos de mi clase
     @GetMapping("/TipoDocumento")
     public List<TipoDocumento> findAll(){
-        List<TipoDocumento> tiposDoc = new ArrayList<TipoDocumento>();
-        TipoDocumento tDoc1 = new TipoDocumento(2,"Cedula Extranjeria","CI",true);
-        tiposDoc.add(tDoc1);
-        TipoDocumento tDoc2 = new TipoDocumento(3,"numero identificacion","NUIP",true);
-        tiposDoc.add(tDoc2);
-        return tiposDoc;
+        return tipoDocumentoService.findAll();
     }
 
     @PostMapping("/TipoDocumento")

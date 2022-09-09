@@ -9,8 +9,8 @@ public class Ingreso extends MovimientoDinero{
     private double valorIngreso;
     private String conceptoIngreso;
 
-    public Ingreso(long idMovDinero, TipoMovimiento tipoMovDinero, Usuario userMovDinero, long idIngreso, Date fechaIngreso, double valorIngreso, String conceptoIngreso) {
-        super(idMovDinero, tipoMovDinero, userMovDinero);
+    public Ingreso(long idMovDinero, TipoMovimiento tipoMovDinero, Usuario userMovDinero, Empresa empresaMovDinero, long idIngreso, Date fechaIngreso, double valorIngreso, String conceptoIngreso) {
+        super(idMovDinero, tipoMovDinero, userMovDinero, empresaMovDinero);
         this.idIngreso = idIngreso;
         this.fechaIngreso = fechaIngreso;
         this.valorIngreso = valorIngreso;
@@ -48,6 +48,7 @@ public class Ingreso extends MovimientoDinero{
     public void setConceptoIngreso(String conceptoIngreso) {
         this.conceptoIngreso = conceptoIngreso;
     }
+
 
     @Override
     public String toString() {

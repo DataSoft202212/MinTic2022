@@ -27,16 +27,21 @@ public class TipoDocumentoService implements ITipoDocumentoService{
 
     @Override
     public TipoDocumento createTipoDocumento(TipoDocumento tipoDocumento) {
-        return null;
+        TipoDocumento docNew = new TipoDocumento(tipoDocumento.getIdTipoDocumento(), tipoDocumento.getDescripcionTipodocumento(), tipoDocumento.getSiglasTipoDocumento(), tipoDocumento.isEstado());
+        return docNew;
     }
 
     @Override
     public TipoDocumento updateTipoDocumento(long id, TipoDocumento tipoDocumento) {
-        return null;
+        TipoDocumento putTipoDoc = findById(id);
+        putTipoDoc.setDescripcionTipodocumento(tipoDocumento.getDescripcionTipodocumento());
+        putTipoDoc.setSiglasTipoDocumento(tipoDocumento.getSiglasTipoDocumento());
+        putTipoDoc.setEstado(tipoDocumento.isEstado());
+        return putTipoDoc;
     }
 
     @Override
     public void deleteTipoDocumento(long id) {
-
+        TipoDocumento delTipoDocumento = findById(id);
     }
 }

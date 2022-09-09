@@ -5,10 +5,13 @@ public class MovimientoDinero {
     private TipoMovimiento tipoMovDinero;
     private Usuario userMovDinero;
 
-    public MovimientoDinero(long idMovDinero, TipoMovimiento tipoMovDinero, Usuario userMovDinero) {
+    private Empresa empresaMovDinero;
+
+    public MovimientoDinero(long idMovDinero, TipoMovimiento tipoMovDinero, Usuario userMovDinero, Empresa empresaMovDinero) {
         this.idMovDinero = idMovDinero;
         this.tipoMovDinero = tipoMovDinero;
         this.userMovDinero = userMovDinero;
+        this.empresaMovDinero = empresaMovDinero;
     }
 
     public long getIdMovDinero() {
@@ -33,5 +36,13 @@ public class MovimientoDinero {
 
     public void setUserMovDinero(Usuario userMovDinero) {
         this.userMovDinero = userMovDinero;
+    }
+
+    public Empresa getEmpresaMovDinero() {
+        return empresaMovDinero;
+    }
+
+    public void setEmpresaMovDinero(Empresa empresaMovDinero) {
+        this.empresaMovDinero = empresaMovDinero;
     }
 }

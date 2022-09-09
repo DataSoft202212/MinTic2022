@@ -41,6 +41,7 @@ public class RolService implements IRolService{
 
     @Override
     public void deleteRol(long id) {
+
         Rol delRol = findById(id);
     }
 }

@@ -29,21 +29,17 @@ public class TipoDocumentoRestController {
 
     @PostMapping("/TipoDocumento")
     public TipoDocumento createTipoDocumento(@RequestBody TipoDocumento tipoDocumento ){
-        TipoDocumento docNew = new TipoDocumento(tipoDocumento.getIdTipoDocumento(), tipoDocumento.getDescripcionTipodocumento(), tipoDocumento.getSiglasTipoDocumento(), tipoDocumento.isEstado());
-        return docNew;
+        return tipoDocumentoService.createTipoDocumento(tipoDocumento);
     }
 
     @PutMapping("/TipoDocumento/{id}")
     public TipoDocumento updateTipoDocumento(@PathVariable long id,@RequestBody TipoDocumento tipoDocumento){
-        TipoDocumento putTipoDoc = findById(id);
-        putTipoDoc.setDescripcionTipodocumento(tipoDocumento.getDescripcionTipodocumento());
-        putTipoDoc.setSiglasTipoDocumento(tipoDocumento.getSiglasTipoDocumento());
-        putTipoDoc.setEstado(tipoDocumento.isEstado());
-        return putTipoDoc;
+        return tipoDocumentoService.updateTipoDocumento(id, tipoDocumento);
     }
 
     @DeleteMapping("/TipoDocumento/{id}")
     public void deleteTipoDocumento(@PathVariable long id){
-        TipoDocumento delTipoDocumento = findById(id);
+        tipoDocumentoService.deleteTipoDocumento(id);
+
     }
 }

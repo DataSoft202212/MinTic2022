@@ -9,8 +9,8 @@ public class Egreso extends MovimientoDinero{
     private double valorEgreso;
     private String conceptoEgreso;
 
-    public Egreso(long idMovDinero, TipoMovimiento tipoMovDinero, Usuario userMovDinero, long idEgreso, Date fechaEgreso, double valorEgreso, String conceptoEgreso) {
-        super(idMovDinero, tipoMovDinero, userMovDinero);
+    public Egreso(long idMovDinero, TipoMovimiento tipoMovDinero, Usuario userMovDinero, Empresa empresaMovDinero, long idEgreso, Date fechaEgreso, double valorEgreso, String conceptoEgreso) {
+        super(idMovDinero, tipoMovDinero, userMovDinero, empresaMovDinero);
         this.idEgreso = idEgreso;
         this.fechaEgreso = fechaEgreso;
         this.valorEgreso = valorEgreso;

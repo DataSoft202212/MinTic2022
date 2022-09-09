@@ -7,20 +7,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class TipoDocumentoService implements ITipoDocumentoService{
+public class TipoDocumentoService implements ITipoDocumentoService {
 
     @Override
     public TipoDocumento findById(long id) {
-        TipoDocumento docUno = new TipoDocumento(id,"Cedula Ciudadania","CC",true);
+        TipoDocumento docUno = new TipoDocumento(id, "Cedula Ciudadania", "CC", true);
         return docUno;
     }
 
     @Override
     public List<TipoDocumento> findAll() {
         List<TipoDocumento> tipoDoc = new ArrayList<TipoDocumento>();
-        TipoDocumento tDoc1 = new TipoDocumento(2,"Cedula Extranjeria","CI",true);
+        TipoDocumento tDoc1 = new TipoDocumento(2, "Cedula Extranjeria", "CI", true);
         tipoDoc.add(tDoc1);
-        TipoDocumento tDoc2 = new TipoDocumento(3,"numero identificacion","NUIP",true);
+        TipoDocumento tDoc2 = new TipoDocumento(3, "numero identificacion", "NUIP", true);
         tipoDoc.add(tDoc2);
         return tipoDoc;
     }

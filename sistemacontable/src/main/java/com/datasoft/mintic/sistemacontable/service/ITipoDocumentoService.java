@@ -12,9 +12,9 @@ public interface ITipoDocumentoService {
 
     public List<TipoDocumento> findAll();
 
-    public TipoDocumento createTipoDocumento( TipoDocumento tipoDocumento );
+    public TipoDocumento createTipoDocumento(TipoDocumento tipoDocumento);
 
-    public TipoDocumento updateTipoDocumento(long id,TipoDocumento tipoDocumento);
+    public TipoDocumento updateTipoDocumento(long id, TipoDocumento tipoDocumento);
 
     public void deleteTipoDocumento(long id);
 }

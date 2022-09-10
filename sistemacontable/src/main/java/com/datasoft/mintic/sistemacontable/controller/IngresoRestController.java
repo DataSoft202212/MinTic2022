@@ -47,6 +47,7 @@ public class IngresoRestController {
 
     @DeleteMapping("/Ingreso/{id}")
     public void deleteIngreso(@PathVariable long id){
+
         Ingreso delIngreso = findById(id);
     }
 

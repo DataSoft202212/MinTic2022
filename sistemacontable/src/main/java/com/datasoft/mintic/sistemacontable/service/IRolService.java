@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface IRolService {
 
-    public Rol findById(long id);
+    public Rol findById( long id);
 
     public List<Rol> findAll();
 

@@ -1,8 +1,6 @@
 package com.datasoft.mintic.sistemacontable.service;
 
 import com.datasoft.mintic.sistemacontable.entity.Empresa;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 

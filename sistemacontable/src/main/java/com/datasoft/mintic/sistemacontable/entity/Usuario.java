@@ -1,17 +1,43 @@
 package com.datasoft.mintic.sistemacontable.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "usuario")
+
 public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_usuario")
     private long idUsuario;
+    @ManyToOne
+    @JoinColumn(name = "id_tipo_documento",nullable = false)
     private TipoDocumento tipoDocumento;
+    @Column(name = "nro_identificacion",unique = true,nullable = false)
     private String nroIdentificacion;
+    @Column(name = "nombre_usuario",nullable = false)
     private String nombreUsuario;
+    @Column(name = "apellido_usuario",nullable = false)
     private String apellidoUsuario;
+    @Column(name = "dir_usuario",nullable = false)
     private String dirUsuario;
+    @Column(name = "tel_usuario", nullable = false)
     private long telUsuario;
+    @Column(name = "email_usuario",nullable = false)
     private String emailUsuario;
+    @ManyToOne
+    @JoinColumn(name = "id_rol",nullable = false)
     private Rol rolUsuario;
+
+    @ManyToOne
+    @JoinColumn(name = "id_empresa", nullable = false)
+    private Empresa empresa;
+    @Column(name = "pass_usuario",nullable = false)
     private String passUsuario;
+    @Column(name = "estado_usuario",nullable = false)
     private boolean estadoUsuario;
+
+
 
     public Usuario(long idUsuario, TipoDocumento tipoDocumento, String nroIdentificacion, String nombreUsuario, String apellidoUsuario, String dirUsuario, long telUsuario, String emailUsuario, Rol rolUsuario, String passUsuario, boolean estadoUsuario) {
         this.idUsuario = idUsuario;

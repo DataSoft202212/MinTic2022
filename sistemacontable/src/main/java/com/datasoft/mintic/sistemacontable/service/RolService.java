@@ -1,27 +1,28 @@
 package com.datasoft.mintic.sistemacontable.service;
 
 import com.datasoft.mintic.sistemacontable.entity.Rol;
+import com.datasoft.mintic.sistemacontable.repository.IRolRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RolService implements IRolService {
+    @Autowired
+    private IRolRepository rolRepository;
 
     @Override
     public Rol findById(long id) {
-        Rol rol1 = new Rol(id, "Administrador", true);
-        return rol1;
+        Optional<Rol> rol1 = rolRepository.findById(id);
+        return rol1.get();
     }
 
     @Override
     public List<Rol> findAll() {
-        List<Rol> roles = new ArrayList<Rol>();
-        Rol rol1 = new Rol(1, "Administrador", true);
-        roles.add(rol1);
-        Rol rol2 = new Rol(2, "Operador", true);
-        roles.add(rol2);
+        List<Rol> roles = (List<Rol>) rolRepository.findAll();
         return roles;
     }
 

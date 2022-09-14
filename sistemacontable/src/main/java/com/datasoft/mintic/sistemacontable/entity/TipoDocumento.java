@@ -1,9 +1,19 @@
 package com.datasoft.mintic.sistemacontable.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tipo_documento")
 public class TipoDocumento {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_tipo_documento")
     private long idTipoDocumento;
+    @Column(name = "descripcion_tipo_documento",nullable = false)
     private String descripcionTipodocumento;
+    @Column(name = "siglas_tipo_documento",nullable = false)
     private String siglasTipoDocumento;
+    @Column(name = "estado",nullable = false)
     private boolean estado;
 
     public TipoDocumento(long idTipoDocumento, String descripcionTipodocumento, String siglasTipoDocumento, boolean estado) {

@@ -1,12 +1,24 @@
 package com.datasoft.mintic.sistemacontable.entity;
 
-public class Empresa {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "empresa")
+
+public class Empresa {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_empresa")
     private long idEmpresa;
+    @Column(name = "nit_empresa", unique = true)
     private long nitEmpresa;
+    @Column(name = "razon_social_empresa", nullable = false)
     private String razonSocialEmpresa;
+    @Column(name = "dir_empresa",nullable = false)
     private String dirEmpresa;
+    @Column(name = "tel_empresa", nullable = false)
     private long telEmpresa;
+    @Column(name = "email_empresa",nullable = false)
     private String emailEmpresa;
 
     public Empresa(long idEmpresa, long nitEmpresa, String razonSocialEmpresa, String dirEmpresa, long telEmpresa, String emailEmpresa) {

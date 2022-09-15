@@ -16,6 +16,9 @@ public class TipoDocumento {
     @Column(name = "estado",nullable = false)
     private boolean estado;
 
+    public TipoDocumento() {
+    }
+
     public TipoDocumento(long idTipoDocumento, String descripcionTipodocumento, String siglasTipoDocumento, boolean estado) {
         this.idTipoDocumento = idTipoDocumento;
         this.descripcionTipodocumento = descripcionTipodocumento;

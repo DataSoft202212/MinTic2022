@@ -21,6 +21,9 @@ public class Empresa {
     @Column(name = "email_empresa",nullable = false)
     private String emailEmpresa;
 
+    public Empresa() {
+    }
+
     public Empresa(long idEmpresa, long nitEmpresa, String razonSocialEmpresa, String dirEmpresa, long telEmpresa, String emailEmpresa) {
         this.idEmpresa = idEmpresa;
         this.nitEmpresa = nitEmpresa;

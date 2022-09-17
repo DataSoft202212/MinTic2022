@@ -1,11 +1,29 @@
 package com.datasoft.mintic.sistemacontable.entity;
 
+import javax.persistence.*;
+
+@MappedSuperclass
 public class MovimientoDinero {
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name = "id_mov_dinero")
     private long idMovDinero;
+
+    @Column (name = "tipo_mov_dinero")
     private TipoMovimiento tipoMovDinero;
+
+    @ManyToOne
+    @JoinColumn (name = "id_usuario")
     private Usuario userMovDinero;
 
+    @ManyToOne
+    @JoinColumn (name = "id_empresa")
     private Empresa empresaMovDinero;
+
+    public MovimientoDinero(){
+
+    }
+
 
     public MovimientoDinero(long idMovDinero, TipoMovimiento tipoMovDinero, Usuario userMovDinero, Empresa empresaMovDinero) {
         this.idMovDinero = idMovDinero;

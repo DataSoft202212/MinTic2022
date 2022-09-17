@@ -4,7 +4,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "usuario")
-
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,9 +36,10 @@ public class Usuario {
     @Column(name = "estado_usuario",nullable = false)
     private boolean estadoUsuario;
 
+    public Usuario(){
+    }
 
-
-    public Usuario(long idUsuario, TipoDocumento tipoDocumento, String nroIdentificacion, String nombreUsuario, String apellidoUsuario, String dirUsuario, long telUsuario, String emailUsuario, Rol rolUsuario, String passUsuario, boolean estadoUsuario) {
+    public Usuario(long idUsuario, TipoDocumento tipoDocumento, String nroIdentificacion, String nombreUsuario, String apellidoUsuario, String dirUsuario, long telUsuario, String emailUsuario, Rol rolUsuario, Empresa empresa, String passUsuario, boolean estadoUsuario) {
         this.idUsuario = idUsuario;
         this.tipoDocumento = tipoDocumento;
         this.nroIdentificacion = nroIdentificacion;
@@ -49,6 +49,7 @@ public class Usuario {
         this.telUsuario = telUsuario;
         this.emailUsuario = emailUsuario;
         this.rolUsuario = rolUsuario;
+        this.empresa = empresa;
         this.passUsuario = passUsuario;
         this.estadoUsuario = estadoUsuario;
     }
@@ -139,6 +140,14 @@ public class Usuario {
 
     public void setEstadoUsuario(boolean estadoUsuario) {
         this.estadoUsuario = estadoUsuario;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 
     @Override

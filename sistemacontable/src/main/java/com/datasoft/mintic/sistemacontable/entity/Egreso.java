@@ -1,13 +1,29 @@
 package com.datasoft.mintic.sistemacontable.entity;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table (name = "Egresos")
 public class Egreso extends MovimientoDinero{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name = "id_egreso")
     private long idEgreso;
+
+    @Column (name = "fecha_egreso", nullable = false)
     private Date fechaEgreso;
+
+    @Column (name = "valor_egreso", nullable = false)
     private double valorEgreso;
+
+    @Column (name = "concepto_egreso", nullable = false)
     private String conceptoEgreso;
+
+    public Egreso(){
+
+    }
 
     public Egreso(long idMovDinero, TipoMovimiento tipoMovDinero, Usuario userMovDinero, Empresa empresaMovDinero, long idEgreso, Date fechaEgreso, double valorEgreso, String conceptoEgreso) {
         super(idMovDinero, tipoMovDinero, userMovDinero, empresaMovDinero);

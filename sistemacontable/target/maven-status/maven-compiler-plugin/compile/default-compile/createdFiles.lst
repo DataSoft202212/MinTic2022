@@ -28,5 +28,6 @@ com\datasoft\mintic\sistemacontable\service\IEgresoService.class
 com\datasoft\mintic\sistemacontable\entity\MovimientoDinero.class
 com\datasoft\mintic\sistemacontable\controller\UsuarioRestController.class
 com\datasoft\mintic\sistemacontable\controller\TipoDocumentoRestController.class
+com\datasoft\mintic\sistemacontable\SistemacontableApplication.class
 com\datasoft\mintic\sistemacontable\entity\TipoMovimiento.class
 com\datasoft\mintic\sistemacontable\repository\ITipoDocumentoRepository.class

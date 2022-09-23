@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Empresa</title>
+</head>
+<body>
+    <h1>Empresa</h1>
+
+    <form th:action="@{/nuevaempresa}" method="post" th:object="${empresa}">
+
+        <label for="nitempresa">Nit Empresa</label>
+        <input type="text" name="nitempresa" th:field="*{nitEmpresa}">
+        <br>
+        <label for="nomempresa">Razon Social</label>
+        <input type="text" name="nomempresa" th:field="*{razonSocialEmpresa}">
+        <br>
+        <label for="dirempresa">Direccion</label>
+        <input type="text" name="dirempresa" th:field="*{dirEmpresa}">
+        <br>
+        <label for="telempresa">Telefono</label>
+        <input type="text" name="telempresa" th:field="*{telEmpresa}">
+        <br><label for="emailempresa">E-Mail</label>
+        <input type="email" name="emailempresa" th:field="*{emailEmpresa}">
+        <br>
+        <input type="submit" name="guardar" value="Guardar">
+    </form>
+
+    <a th:href = "@{/}">Inicio</a>
+    <a th:href = "@{/Empresa/listempresa}">Atras</a>
+
+</body>
+</html>

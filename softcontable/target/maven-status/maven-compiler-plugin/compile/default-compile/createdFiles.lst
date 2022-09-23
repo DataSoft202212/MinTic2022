@@ -1,3 +1,4 @@
+com\datasoft\mintic\softcontable\Controller\IndexController.class
 com\datasoft\mintic\softcontable\entity\Usuario.class
 com\datasoft\mintic\softcontable\entity\MovimientoDinero.class
 com\datasoft\mintic\softcontable\entity\Egreso.class
@@ -5,6 +6,7 @@ com\datasoft\mintic\softcontable\repository\IEmpresaRepository.class
 com\datasoft\mintic\softcontable\service\IEgresoService.class
 com\datasoft\mintic\softcontable\entity\TipoMovimiento.class
 com\datasoft\mintic\softcontable\service\IEmpresaService.class
+com\datasoft\mintic\softcontable\Controller\EmpresaController.class
 com\datasoft\mintic\softcontable\service\RolService.class
 com\datasoft\mintic\softcontable\entity\Rol.class
 com\datasoft\mintic\softcontable\entity\TipoDocumento.class
@@ -15,6 +17,7 @@ com\datasoft\mintic\softcontable\service\EgresoService.class
 com\datasoft\mintic\softcontable\service\IIngresoService.class
 com\datasoft\mintic\softcontable\repository\IEgresoRepository.class
 com\datasoft\mintic\softcontable\repository\IRolRepository.class
+com\datasoft\mintic\softcontable\Controller\UsuarioController.class
 com\datasoft\mintic\softcontable\repository\IIngresoRepository.class
 com\datasoft\mintic\softcontable\service\IRolService.class
 com\datasoft\mintic\softcontable\repository\ITipoDocumentoRepository.class

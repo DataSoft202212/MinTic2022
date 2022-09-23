@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Usuario</title>
+</head>
+<body>
+  <h1>Crear Usuario</h1>
+  <form th:action="@{/nuevouser}" method="post" th:object="${usuarioNuevo}">
+
+      <label for="tipDoc">Tipo de Documento</label>
+      <select th:field="*{tipoDocumento.idTipoDocumento}" name="tipDoc">
+          <option value="0" selected>Seleccione Tipo de Documento</option>
+          <option th:each="tipoDoc : ${tipoDocumentos}"
+                  th:value="${tipoDoc.idTipoDocumento}"
+                  th:text="${tipoDoc.descripcionTipodocumento}"
+          ></option>
+      </select>
+      <br>
+      <label for="nroidentificacion">Nro Identificacion</label>
+      <input type="text" name="nroidentificacion" th:field="*{nroIdentificacion}">
+      <br>
+      <label for="nombres">Nombres</label>
+      <input  type="text" name="nombres" th:field="*{nombreUsuario}">
+      <br>
+      <label for="apellidos">Apellidos</label>
+      <input  type="text" name="apellidos" th:field="*{apellidoUsuario}">
+      <br>
+      <label for="dirusuario">Direccion</label>
+      <input type="text" name="dirusuario" th:field="*{dirUsuario}">
+      <br>
+      <label for="telusuario">Telefono</label>
+      <input type="text" name="telusuario" th:field="*{telUsuario}">
+      <br>
+      <label for="email">E-Mail</label>
+      <input type="text" name="email" th:field="*{emailUsuario}">
+      <br>
+      <label for="rol">Rol</label>
+      <select th:field="*{rolUsuario.idRol}" name="rol">
+          <option value="0" selected>Seleccione Rol</option>
+          <option th:each="rol : ${roles}"
+                  th:value="${rol.idRol}"
+                  th:text="${rol.descripcionRol}"
+          ></option>
+      </select>
+      <br>
+      <input type="submit" name="guardar" value="Guardar">
+
+  </form>
+  <a th:href = "@{/}">Inicio</a>
+  <a th:href = "@{/Usuario/listuser}">Atras</a>
+</body>
+</html>

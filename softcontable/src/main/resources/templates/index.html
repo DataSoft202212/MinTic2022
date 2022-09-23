@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Inicio</title>
 </head>
 <body>
-<h1>Mi primer proyecto</h1>
-<p>Inicio del cambio de estructura del proyecto</p>
+<h1>Software Contable</h1>
+    <a th:href="@{/Usuario/listuser}">Gestion de Usuarios</a><br>
+    <a th:href="@{/Empresa/listempresa}">Gestion de Empresas</a><br>
+    <a href="#">Gestion de Movimientos Contables</a><br>
 
 </body>
 </html>

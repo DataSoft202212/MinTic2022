@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Empresas</title>
+</head>
+<body>
+    <h1>Empresas</h1>
+
+    <a th:href="@{/Empresa/empresa}">Crear Empresa</a><br>
+
+    <table border="1">
+       <tr>
+           <th>Nit Empresa</th>
+           <th>Razon Social</th>
+           <th>Direccion</th>
+           <th>Telefono</th>
+           <th>E-Mail</th>
+       </tr>
+        <tr th:each = "empresa : ${listadoempresa}">
+            <td th:text = "${empresa.nitEmpresa}"></td>
+            <td th:text = "${empresa.razonSocialEmpresa}"></td>
+            <td th:text = "${empresa.dirEmpresa}"></td>
+            <td th:text = "${empresa.telEmpresa}"></td>
+            <td th:text = "${empresa.emailEmpresa}"></td>
+        </tr>
+    </table>
+
+    <a th:href = "@{/}">Inicio</a>
+
+</body>
+</html>

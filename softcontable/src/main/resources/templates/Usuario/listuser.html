@@ -23,13 +23,13 @@
         <tr th:each = "Usuario : ${listadoUsuario}">
             <td th:text = "${Usuario.nombreUsuario}"></td>
             <td th:text = "${Usuario.apellidoUsuario}"></td>
-            <td th:text = "${Usuario.tipoDocumento}"></td>
+            <td th:text = "${Usuario.TipoDocumento.descripcionTipodocumento}"></td>
             <td th:text = "${Usuario.nroIdentificacion}"></td>
             <td th:text = "${Usuario.dirUsuario}"></td>
             <td th:text = "${Usuario.telUsuario}"></td>
             <td th:text = "${Usuario.emailUsuario}"></td>
-            <td th:text = "${Usuario.rolUsuario}"></td>
-            <td th:text = "${Usuario.empresa}"></td>
+            <td th:text = "${Usuario.rolUsuario.descripcionRol}"></td>
+            <td th:text = "${Usuario.empresa.razonSocialEmpresa}"></td>
         </tr>
     </table>
 

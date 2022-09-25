@@ -1,9 +1,11 @@
 package com.datasoft.mintic.softcontable.Controller;
 
 
+import com.datasoft.mintic.softcontable.entity.Empresa;
 import com.datasoft.mintic.softcontable.entity.Rol;
 import com.datasoft.mintic.softcontable.entity.TipoDocumento;
 import com.datasoft.mintic.softcontable.entity.Usuario;
+import com.datasoft.mintic.softcontable.service.IEmpresaService;
 import com.datasoft.mintic.softcontable.service.IRolService;
 import com.datasoft.mintic.softcontable.service.ITipoDocumentoService;
 import com.datasoft.mintic.softcontable.service.IUsuarioService;
@@ -29,6 +31,9 @@ public class UsuarioController {
     @Autowired
     private ITipoDocumentoService tipoDocumentoService;
 
+    @Autowired
+    private IEmpresaService empresaService;
+
     private final Logger LOG = Logger.getLogger("" + UsuarioController.class);
 
     @GetMapping("/Usuario/listuser")
@@ -37,6 +42,7 @@ public class UsuarioController {
 
         List<Usuario> listUser = usuarioService.findAll();
         model.addAttribute("listadoUsuario",listUser);
+
 
         return "Usuario/listuser";
     }
@@ -57,15 +63,21 @@ public class UsuarioController {
         List<TipoDocumento> listTipoDoc = tipoDocumentoService.findAll();
         postmodel.addAttribute("tipoDocumentos",listTipoDoc);
 
+        //Empresas
+        List<Empresa> listempresa = empresaService.findAll();
+        postmodel.addAttribute("empresas",listempresa);
+
         return "Usuario/usuario";
     }
 
     @PostMapping("/nuevouser")
     public String guardarUser(Usuario user){
         LOG.log(Level.INFO,"guardarUser");
+        user.setEstadoUsuario(true);
         System.out.println(user.toString());
+        user = usuarioService.createUsuario(user);
 
-        return "Usuario/usuario";
+        return "redirect:/Usuario/usuario";
     }
 
 }

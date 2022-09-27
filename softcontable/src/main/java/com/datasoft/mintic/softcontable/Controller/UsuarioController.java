@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -42,7 +43,6 @@ public class UsuarioController {
 
         List<Usuario> listUser = usuarioService.findAll();
         model.addAttribute("listadoUsuario",listUser);
-
 
         return "Usuario/listuser";
     }
@@ -78,6 +78,36 @@ public class UsuarioController {
         user = usuarioService.createUsuario(user);
 
         return "redirect:/Usuario/usuario";
+    }
+
+    @GetMapping("/editUser/{id}")
+    public String editUsuario(@PathVariable long id, Usuario usuario, Model modelEditUser){
+        LOG.log(Level.INFO,"editUsuario");
+        Usuario editusuario = usuarioService.findById(id);
+
+        //Tipo Rol
+        List<Rol> listRol = rolService.findAll();
+        modelEditUser.addAttribute("roles",listRol);
+
+        //Tipos Documentos
+        List<TipoDocumento> listTipoDoc = tipoDocumentoService.findAll();
+        modelEditUser.addAttribute("tipoDocumentos",listTipoDoc);
+
+        //Empresas
+        List<Empresa> listempresa = empresaService.findAll();
+        modelEditUser.addAttribute("empresas",listempresa);
+
+        modelEditUser.addAttribute("usuarioNuevo",editusuario);
+
+        return "/Usuario/usuario";
+    }
+
+    @GetMapping("/delUser/{id}")
+    public String deleteUsuario(@PathVariable long id, Usuario usuario, Model modelDelUser){
+        LOG.log(Level.INFO,"deleteUsuario");
+        usuarioService.deleteUsuario(id);
+
+        return "redirect:/Usuario/listuser";
     }
 
 }

@@ -9,6 +9,8 @@
 
     <form th:action="@{/nuevaempresa}" method="post" th:object="${empresa}">
 
+        <input type="hidden" name="idEmpresa" th:field="*{idEmpresa}">
+
         <label for="nitempresa">Nit Empresa</label>
         <input type="text" name="nitempresa" th:field="*{nitEmpresa}">
         <br>

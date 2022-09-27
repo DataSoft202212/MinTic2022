@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -41,8 +42,25 @@ public class EmpresaController {
     @PostMapping("/nuevaempresa")
     public String guardarEmpresa(Empresa enterprise){
         LOG.log(Level.INFO,"guardarEmpresa");
-        System.out.println(enterprise.toString());
         enterprise = empresaService.createEmpresa(enterprise);
+        return "redirect:/Empresa/listempresa";
+    }
+
+    @GetMapping("/editEmpresa/{id}")
+    public String editempresa(@PathVariable long id, Empresa empresa, Model modeleditarempresa){
+        LOG.log(Level.INFO,"editempresa");
+        Empresa editempresa = empresaService.findById(id);
+
+        modeleditarempresa.addAttribute("empresa",editempresa);
+
+        return "/Empresa/empresa";
+    }
+
+    @GetMapping("/delEmpresa/{id}")
+    public String deleteEmpresa(@PathVariable long id, Empresa empresa, Model modelDelEmpresa){
+        LOG.log(Level.INFO,"deleteEmpresa");
+        empresaService.deleteEmpresa(id);
+
         return "redirect:/Empresa/listempresa";
     }
 

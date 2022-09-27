@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Movimiento Financiero</title>
+</head>
+  <h1>Registro de Movimientos Financieros</h1>
+
+    <a th:href="@{/RegistroFinanciero/Egreso}">Crear Egreso</a><br>
+
+    <table border="1">
+        <tr>
+            <th>Tipo Movimiento</th>
+            <th>Fecha</th>
+            <th>Valor</th>
+            <th>Concepto</th>
+            <th>Usuario</th>
+            <th>Empresa</th>
+        </tr>
+
+        <tr th:each = " ingreso: ${listIngreso}">
+            <td th:text="${ingreso.tipoMovDinero}"></td>
+            <td th:text="${ingreso.fechaIngreso}"></td>
+            <td th:text="${ingreso.valorIngreso}"></td>
+            <td th:text="${ingreso.conceptoIngreso}"></td>
+            <td th:text="${ingreso.userMovDinero.nombreUsuario} + ${ingreso.userMovDinero.apellidoUsuario}"></td>
+            <td th:text="${ingreso.empresaMovDinero.razonSocialEmpresa}"></td>
+        </tr>
+        <tr>
+            <th>Total Ingresos</th>
+            <td>"${sumaingresos}</td>
+        </tr>
+
+    </table>
+    <br>
+
+    <table border="1">
+        <tr>
+            <th>Tipo Movimiento</th>
+            <th>Fecha</th>
+            <th>Valor</th>
+            <th>Concepto</th>
+            <th>Usuario</th>
+            <th>Empresa</th>
+        </tr>
+        <tr th:each = "Egreso : ${listEgreso}">
+            <td th:text="${Egreso.tipoMovDinero}"></td>
+            <td th:text="${Egreso.fechaEgreso}"></td>
+            <td th:text="${Egreso.valorEgreso}"></td>
+            <td th:text="${Egreso.conceptoEgreso}"></td>
+            <td th:text="${Egreso.userMovDinero.nombreUsuario} + ${Egreso.userMovDinero.apellidoUsuario}"></td>
+            <td th:text="${Egreso.empresaMovDinero.razonSocialEmpresa}"></td>
+        </tr>
+        <tr>
+            <th>Total Egresos</th>
+        </tr>
+
+
+    </table>
+        <a th:href = "@{/}">Inicio</a>
+
+<body>
+
+</body>
+</html>

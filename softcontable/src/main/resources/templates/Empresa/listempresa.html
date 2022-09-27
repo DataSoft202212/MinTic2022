@@ -16,6 +16,8 @@
            <th>Direccion</th>
            <th>Telefono</th>
            <th>E-Mail</th>
+           <th>Editar</th>
+           <th>Eliminar</th>
        </tr>
         <tr th:each = "empresa : ${listadoempresa}">
             <td th:text = "${empresa.nitEmpresa}"></td>
@@ -23,6 +25,8 @@
             <td th:text = "${empresa.dirEmpresa}"></td>
             <td th:text = "${empresa.telEmpresa}"></td>
             <td th:text = "${empresa.emailEmpresa}"></td>
+            <td><a th:href="@{/editEmpresa/}+ ${empresa.idEmpresa}" th:text="Editar"></a></td>
+            <td><a th:href="@{/delEmpresa/}+ ${empresa.idEmpresa}" th:text="Eliminar"></a></td>
         </tr>
     </table>
 

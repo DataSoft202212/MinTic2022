@@ -19,6 +19,8 @@
             <th>E-mail</th>
             <th>Cargo</th>
             <th>Empresa</th>
+            <th>Editar</th>
+            <Th>Eliminar</Th>
         </tr>
         <tr th:each = "Usuario : ${listadoUsuario}">
             <td th:text = "${Usuario.nombreUsuario}"></td>
@@ -30,6 +32,9 @@
             <td th:text = "${Usuario.emailUsuario}"></td>
             <td th:text = "${Usuario.rolUsuario.descripcionRol}"></td>
             <td th:text = "${Usuario.empresa.razonSocialEmpresa}"></td>
+            <td><a th:href = "@{/editUser/} + ${Usuario.idUsuario}" th:text="Editar"></a></td>
+            <td><a th:href = "@{/delUser/} + ${Usuario.idUsuario}" th:text="Eliminar"></a></td>
+
         </tr>
     </table>
 

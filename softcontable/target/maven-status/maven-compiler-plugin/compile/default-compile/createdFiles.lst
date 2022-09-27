@@ -16,6 +16,7 @@ com\datasoft\mintic\softcontable\service\EmpresaService.class
 com\datasoft\mintic\softcontable\service\EgresoService.class
 com\datasoft\mintic\softcontable\service\IIngresoService.class
 com\datasoft\mintic\softcontable\repository\IEgresoRepository.class
+com\datasoft\mintic\softcontable\Controller\MovimientoFinancieroController.class
 com\datasoft\mintic\softcontable\repository\IRolRepository.class
 com\datasoft\mintic\softcontable\Controller\UsuarioController.class
 com\datasoft\mintic\softcontable\repository\IIngresoRepository.class

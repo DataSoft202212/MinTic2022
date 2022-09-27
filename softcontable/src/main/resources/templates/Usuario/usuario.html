@@ -7,7 +7,7 @@
 <body>
   <h1>Crear Usuario</h1>
   <form th:action="@{/nuevouser}" method="post" th:object="${usuarioNuevo}">
-
+      <input type="hidden" name="idusuario" th:field="*{idUsuario}">
       <label for="tipDoc">Tipo de Documento</label>
       <select th:field="*{tipoDocumento.idTipoDocumento}" name="tipDoc">
           <option value="0" selected>Seleccione Tipo de Documento</option>
@@ -52,9 +52,9 @@
                   th:text="${empresa.razonSocialEmpresa}"
           ></option>
       </select>
-
+      <br>
       <label for="pass">Password</label>
-      <input type="password" name="pass" th:field="*{passUsuario}">
+      <input type="text" name="pass" th:field="*{passUsuario}">
       <br>
 
 

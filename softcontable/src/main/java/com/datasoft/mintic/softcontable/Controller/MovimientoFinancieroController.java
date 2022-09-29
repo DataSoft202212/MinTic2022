@@ -54,7 +54,6 @@ public class MovimientoFinancieroController {
 
         for (Ingreso ingreso: ingresoList){
             sumaIngreso = sumaIngreso + ingreso.getValorIngreso();
-            System.out.println(sumaIngreso);
         }
 
         modeloListMovFinan.addAttribute("totalEgreso",sumaEgreso);

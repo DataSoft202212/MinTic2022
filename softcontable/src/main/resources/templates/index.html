@@ -8,9 +8,38 @@
 </head>
 <body>
     <header th:replace="layout/plantilla :: header"></header>
-    <a th:href="@{/Usuario/listuser}">Gestion de Usuarios</a><br>
-    <a th:href="@{/Empresa/listempresa}">Gestion de Empresas</a><br>
-    <a th:href="@{/RegistroFinanciero/MovimientoFinanciero}">Gestion de Movimientos Financieros</a><br>
+    <div class="container m-3">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card" >
+                    <div class="card-body">
+                        <h5 class="card-title">Gestion de Usuarios</h5>
+                        <p class="card-text">Permite la creacion, modificacion y eliminacion de usuarios.</p>
+                        <a th:href="@{/Usuario/listuser}" class="btn btn-primary">Continuar</a><br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Gestion de Empresas</h5>
+                        <p class="card-text">Permite la creacion, moficiacion y eliminacion de empresas.</p>
+                        <a th:href="@{/Empresa/listempresa}" class="btn btn-primary" >Continuar</a><br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Gestion de Movimientos Financieros</h5>
+                        <p class="card-text">Permite la creacion de ingresos y egresos, visualizacion de todos los movimientos financieros.</p>
+                        <a th:href="@{/RegistroFinanciero/MovimientoFinanciero}" class="btn btn-primary">Continuar</a><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer th:replace="layout/plantilla :: footer"></footer>
     <script th:src="@{/webjars/bootstrap/5.2.0/js/bootstrap.bundle.min.js}"></script>
     <script th:src="@{/webjars/popper/js/2.9.3/umd/popper.min.js}"></script>

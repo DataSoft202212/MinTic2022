@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Plantilla</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.1.2/css/all.min.css}">
+</head>
+<body>
+  <header th:fragment="header">
+
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+          <div class="container-fluid">
+              <a class="navbar-brand" th:href="@{/}">Software Contable</a>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                  <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                      <li>
+                          <a th:href="@{/}" class="nav-link active">Inicio</a>
+                      </li>
+                      <li class="nav-item dropdown ml-auto">
+                          <a class="nav-link dropdown-toggle" href="#"  data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="fas fa-user"></i>
+                              <span>Bienvenido</span>
+                              <span>Usuario</span>
+                          </a>
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">Iniciar Sesion</a></li>
+                              <li><a class="dropdown-item" href="#">Salir</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Ayuda</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </header>
+
+    <footer th:fragment="footer">
+        <p>Derechos Reservados  @Copy DataSoft2022 <a href="http:\\www.mintic.gov.co" target="_blank">Sitio Web</a></p>
+    </footer>
+  <script th:src="@{/webjars/bootstrap/5.2.0/js/bootstrap.bundle.min.js}"></script>
+  <script th:src="@{/webjars/popper/js/2.9.3/umd/popper.min.js}"></script>
+</body>
+</html>

@@ -1,5 +1,7 @@
 package com.datasoft.mintic.softcontable.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -12,6 +14,8 @@ public class Egreso extends MovimientoDinero{
     @Column (name = "id_egreso")
     private long idEgreso;
 
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(iso= DateTimeFormat.ISO.DATE)
     @Column (name = "fecha_egreso", nullable = false)
     private Date fechaEgreso;
 

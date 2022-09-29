@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Empresa</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.1.2/css/all.min.css}">
 </head>
 <body>
+    <header th:replace="layout/plantilla :: header"></header>
     <h1>Empresa</h1>
 
     <form th:action="@{/nuevaempresa}" method="post" th:object="${empresa}">
@@ -28,8 +31,10 @@
         <input type="submit" name="guardar" value="Guardar">
     </form>
 
-    <a th:href = "@{/}">Inicio</a>
     <a th:href = "@{/Empresa/listempresa}">Atras</a>
+    <footer th:replace="layout/plantilla :: footer"></footer>
+    <script th:src="@{/webjars/bootstrap/5.2.0/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/webjars/popper/js/2.9.3/umd/popper.min.js}"></script>
 
 </body>
 </html>

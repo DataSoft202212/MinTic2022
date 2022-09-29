@@ -74,7 +74,6 @@ public class UsuarioController {
     public String guardarUser(Usuario user){
         LOG.log(Level.INFO,"guardarUser");
         user.setEstadoUsuario(true);
-        System.out.println(user.toString());
         user = usuarioService.createUsuario(user);
 
         return "redirect:/Usuario/usuario";
@@ -110,4 +109,33 @@ public class UsuarioController {
         return "redirect:/Usuario/listuser";
     }
 
-}
+    @GetMapping("/Usuario/rol")
+    public String getDirRol(Model modeloRol){
+        LOG.log(Level.INFO,"getDirRol");
+
+        List<Rol> listRol = rolService.findAll();
+        modeloRol.addAttribute("roles",listRol);
+
+        Rol newRol = new Rol();
+        modeloRol.addAttribute("nuevoRol",newRol);
+
+        return "/Usuario/rol";
+    }
+
+    @PostMapping("/nuevoRol")
+    public String guardarRol(Rol rol){
+        LOG.log(Level.INFO,"guardarRol");
+        rol.setEstadoRol(true);
+        rol = rolService.createRol(rol);
+        return "redirect:/Usuario/rol";
+    }
+
+    @GetMapping("/Usuario/tipodocumento")
+    public String createTipoDocumento(Model modTipoDoc) {
+        LOG.log(Level.INFO, "createTipoDocumento");
+
+        List<TipoDocumento> listTipoDoc = tipoDocumentoService.findAll();
+        modTipoDoc.addAttribute("tipodocumento", listTipoDoc);
+        return "/Usuario/tipodocumento";
+        }
+    }

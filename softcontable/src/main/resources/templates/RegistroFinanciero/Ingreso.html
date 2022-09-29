@@ -8,20 +8,20 @@
 </head>
 <body>
     <header th:replace="layout/plantilla :: header"></header>
-    <h1>Registro de Egresos</h1>
+    <h1>Registro de Ingresos</h1>
 
-    <form th:action="@{/nuevoEgreso}" method="post" th:object="${egreso}">
+    <form th:action="@{/nuevoIngreso}" method="post" th:object="${ingreso}">
         <label for="tipomov">Tipo de Movimiento</label>
         <input type="text" name="tipomov" th:field="*{tipoMovDinero}">
         <br>
-        <label for="fEgreso">Fecha </label>
-        <input type="date" name="fEgreso" th:field="*{fechaEgreso}">
+        <label for="fIngreso">Fecha </label>
+        <input type="date" name="fIngreso" th:field="*{fechaIngreso}">
         <br>
-        <label for="vEgreso">Valor </label>
-        <input type="text" name="vEgreso" th:field="*{valorEgreso}">
+        <label for="vIngreso">Valor </label>
+        <input type="text" name="vIngreso" th:field="*{valorIngreso}">
         <br>
-        <label for="cEgreso">Concepto</label>
-        <input type="text" name="cEgreso" th:field="*{conceptoEgreso}">
+        <label for="cIngreso">Concepto</label>
+        <input type="text" name="cIngreso" th:field="*{conceptoIngreso}">
         <br>
         <label for="empresa">Empresa</label>
         <select th:field="*{empresaMovDinero.idEmpresa}" name="empresa">

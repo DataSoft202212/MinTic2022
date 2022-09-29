@@ -3,10 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Rol</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.1.2/css/all.min.css}">
 </head>
 <body>
-    <h1>Roles</h1>
+    <header th:replace="layout/plantilla :: header"></header>
+    <h1>Registro de Roles</h1>
 
-
+    <form th:action="@{/nuevoRol}" method="post" th:object="${nuevoRol}">
+        <label for="desRol">Descripcion </label>
+        <input type="text" name="desRol" th:field="*{descripcionRol}">
+        <label for="estRol">Estado </label>
+        <input type="text" name="estRol"  th:field="*{estadoRol}">
+        <input type="submit" name="guardar" value="Crear Rol" >
+    </form>
+    <br>
+    <TABLE border="1">
+        <tr>
+            <th th:text="Descripcion"></th>
+            <th th:text="Estado"></th>
+            <th th:text="Editar"></th>
+            <th th:text="Eliminar"></th>
+        </tr>
+        <tr th:each =  "rol : ${roles}">
+            <td th:text="${rol.descripcionRol}"></td>
+            <td th:text="${rol.estadoRol}"></td>
+            <td><input type="submit" value="editar" name="Editar"></td>
+            <td><input type="submit" value="eliminar" name="Eliminar"></td>
+        </tr>
+    </TABLE>
+    <footer th:replace="layout/plantilla :: footer"></footer>
+    <script th:src="@{/webjars/bootstrap/5.2.0/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/webjars/popper/js/2.9.3/umd/popper.min.js}"></script>
 </body>
 </html>

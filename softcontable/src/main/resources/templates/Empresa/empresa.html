@@ -8,28 +8,38 @@
 </head>
 <body>
     <header th:replace="layout/plantilla :: header"></header>
+    <div class="container">
+        <div class="row">
+            <div col="col-sm-4">
+
+            </div>
+            <div col="col-sm-4">
+                <form th:action="@{/nuevaempresa}" method="post" th:object="${empresa}">
+
+                    <input type="hidden" name="idEmpresa" th:field="*{idEmpresa}">
+
+                    <label for="nitempresa">Nit Empresa</label>
+                    <input type="text" name="nitempresa" th:field="*{nitEmpresa}">
+                    <br>
+                    <label for="nomempresa">Razon Social</label>
+                    <input type="text" name="nomempresa" th:field="*{razonSocialEmpresa}">
+                    <br>
+                    <label for="dirempresa">Direccion</label>
+                    <input type="text" name="dirempresa" th:field="*{dirEmpresa}">
+                    <br>
+                    <label for="telempresa">Telefono</label>
+                    <input type="text" name="telempresa" th:field="*{telEmpresa}">
+                    <br><label for="emailempresa">E-Mail</label>
+                    <input type="email" name="emailempresa" th:field="*{emailEmpresa}">
+                    <br>
+                    <input type="submit" name="guardar" value="Guardar">
+                </form>
+            </div>
+        </div>
+    </div>
     <h1>Empresa</h1>
 
-    <form th:action="@{/nuevaempresa}" method="post" th:object="${empresa}">
 
-        <input type="hidden" name="idEmpresa" th:field="*{idEmpresa}">
-
-        <label for="nitempresa">Nit Empresa</label>
-        <input type="text" name="nitempresa" th:field="*{nitEmpresa}">
-        <br>
-        <label for="nomempresa">Razon Social</label>
-        <input type="text" name="nomempresa" th:field="*{razonSocialEmpresa}">
-        <br>
-        <label for="dirempresa">Direccion</label>
-        <input type="text" name="dirempresa" th:field="*{dirEmpresa}">
-        <br>
-        <label for="telempresa">Telefono</label>
-        <input type="text" name="telempresa" th:field="*{telEmpresa}">
-        <br><label for="emailempresa">E-Mail</label>
-        <input type="email" name="emailempresa" th:field="*{emailEmpresa}">
-        <br>
-        <input type="submit" name="guardar" value="Guardar">
-    </form>
 
     <a th:href = "@{/Empresa/listempresa}">Atras</a>
     <footer th:replace="layout/plantilla :: footer"></footer>

@@ -136,6 +136,17 @@ public class UsuarioController {
 
         List<TipoDocumento> listTipoDoc = tipoDocumentoService.findAll();
         modTipoDoc.addAttribute("tipodocumento", listTipoDoc);
+
+        TipoDocumento newTipoDoc = new TipoDocumento();
+        modTipoDoc.addAttribute("tipDocUsuario",newTipoDoc);
         return "/Usuario/tipodocumento";
+        }
+
+        @PostMapping("/nuevoTipDoc")
+        public String guardarTipDoc(TipoDocumento tipoDocumento){
+            LOG.log(Level.INFO,"guardarTipDoc");
+            tipoDocumento.setEstado(true);
+            tipoDocumento = tipoDocumentoService.createTipoDocumento(tipoDocumento);
+            return "redirect:/Usuario/tipodocumento";
         }
     }

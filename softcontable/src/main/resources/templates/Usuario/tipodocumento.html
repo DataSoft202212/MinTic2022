@@ -9,6 +9,31 @@
 <body>
     <header th:replace="layout/plantilla :: header"></header>
     <h1>Registro de Tipo de Documento</h1>
+    <form th:action="@{/nuevoTipDoc}" method="post" th:object="${tipDocUsuario}">
+        <label for="descTipoDoc">Descripcion</label>
+        <input type="text" name="descTipoDoc" th:field="*{descripcionTipodocumento}">
+        <label for="ssTipoDoc">Siglas Documento</label>
+        <input type="text" name="ssTipoDoc" th:field="*{siglasTipoDocumento}" >
+        <label for="estadoDoc">Estado</label>
+        <input type="text" name="estadoDoc" th:field="*{estado}">
+        <input type="submit" value="Crear Tipo Documento" name="crearTipDoc">
+    </form>
+    <br>
+    <table border="1">
+        <tr>
+            <th>Descripcion </th>
+            <th>Siglas Documento </th>
+            <th>Estado </th>
+        </tr>
+        <tr th:each="tipdoc : ${tipodocumento}">
+            <td th:text="${tipdoc.descripcionTipodocumento}"></td>
+            <td th:text="${tipdoc.siglasTipoDocumento}"></td>
+            <td th:text="${tipdoc.estado}"></td>
+        </tr>
+    </table>
+    <br>
+    <a th:href = "@{/Usuario/listuser}">Atras</a><br>
+
     <footer th:replace="layout/plantilla :: footer"></footer>
     <script th:src="@{/webjars/bootstrap/5.2.0/js/bootstrap.bundle.min.js}"></script>
     <script th:src="@{/webjars/popper/js/2.9.3/umd/popper.min.js}"></script>
